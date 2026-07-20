@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+@theme {
+  --color-app-text: #E9EEF5;
+  --color-app-text-h: #FFFFFF;
+  --color-app-bg: #1D232A;
+  --color-app-border: #BBCCDD;
+  --color-app-code-bg: #14181C;
+  --color-app-hover: #00B4D8;
+  --color-app-accent-bg: var(--accent-bg);
+  --color-app-accent-border: var(--accent-border);
+  --color-app-social-bg: var(--social-bg);
+  /*Déclaration typo*/
+  --font-header: "Bricolage Grotesque", sans-serif;
+}
+
+:root {
+  --bg: #191E23;
+  --border: #273140;
+  --code-bg: #0B0D10;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
