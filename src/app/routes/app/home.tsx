@@ -4,7 +4,7 @@ import Header from "@/components/ui/Header";
 import Navbar from "@/components/ui/Navbar";
 import MarketingCard from "@/features/MarketingCard/component/MarketingCard";
 
-export default function Test() {
+export default function Home() {
 
     return (
         <>
