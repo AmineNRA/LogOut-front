@@ -9,8 +9,8 @@ export const paths = {
             getHref: () => '/films',
         },
         details: {
-            path: "/films/:filmId",
-            getHref: (id: string) => `/films/${id}`
+            path: "/films/:filmName",
+            getHref: (name: string) => `/films/${name}`
         }
     },
     games: {
