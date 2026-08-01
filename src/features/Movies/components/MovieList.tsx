@@ -47,8 +47,8 @@ export default function PopularMovieList() {
                         <div className="grid grid-flow-row grid-cols-5 gap-12 mt-4 justify-center">
                             {movies.results.map((movie: movie) => (
                                 movie.poster_path &&
-                                <Link to={`/films/${createSlug(movie.title, movie.release_date, movie.id)}`} state={movie.id}>
-                                    <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} key={movie.id} className="shadow-xl border-1 border-app-border rounded-lg hover:outline hover:outline-4 hover:outline-blue-500 hover:[outline-offset:-4px] cursor-pointer" />
+                                <Link to={`/films/${createSlug(movie.title, movie.release_date, movie.id)}`} state={movie.id} key={movie.id}>
+                                    <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} className="shadow-xl border-1 border-app-border rounded-lg hover:outline hover:outline-4 hover:outline-blue-500 hover:[outline-offset:-4px] cursor-pointer" />
                                 </Link>
 
                             ))}

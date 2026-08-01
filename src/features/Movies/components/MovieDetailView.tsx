@@ -5,6 +5,10 @@ import Loading from "@/components/ui/loading/Loading";
 import { formatDate, formatRuntime } from "@/utils/format";
 import StarRating from "@/components/ui/StarRating";
 import GenreButton from "@/components/ui/genreButton/GenreButton";
+import MediaDetailsTabs from "@/components/ui/mediaDetailsTabs/MediaDetailsTabs"
+import Cast from "@/features/shared/cast/components/Cast";
+import Reviews from "@/features/shared/reviews/components/Reviews";
+import Informations from "@/features/shared/information/components/Information";
 
 export default function MovieDetailView() {
 
@@ -15,7 +19,12 @@ export default function MovieDetailView() {
         queryFn: () => getDetailMovie(location.state)
     })
 
-    console.log(detailMovie)
+    const listOfTabs = [
+        { name: "Distribution", component: <Cast id={detailMovie?.id} /> },
+        { name: "Avis", component: <Reviews id={detailMovie?.id} /> },
+        { name: "Informations", component: <Informations id={detailMovie?.id} /> }
+
+    ]
 
     return (
         <>
@@ -45,8 +54,8 @@ export default function MovieDetailView() {
 
                         </div>
                     </div>
+                    <MediaDetailsTabs listOfTabs={listOfTabs} />
                 </section>
-
             }
         </>
     )
