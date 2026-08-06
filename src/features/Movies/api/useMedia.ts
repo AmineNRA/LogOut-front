@@ -1,5 +1,5 @@
-import { getMovies } from "./getMovies";
-import { searchMovie } from "./searchMovie"
+import { getMedia } from "./getMedia";
+import { searchMedia } from "./searchMedia"
 import { useQuery } from '@tanstack/react-query';
 
 type filter = {
@@ -10,19 +10,19 @@ type filter = {
 
 }
 
-export default function useMovie(page: number, filter: filter, searchQuery: string) {
+export default function useMedia(page: number, filter: filter, searchQuery: string, url: string) {
 
     const isSearchActive = searchQuery.trim().length >= 3;
 
     return useQuery({
         queryKey: isSearchActive ?
-            ['movie', searchQuery]
-            : ['movies', filter, page],
+            ['media', searchQuery]
+            : ['medias', filter, page],
         queryFn: () => {
             if (isSearchActive) {
-                return searchMovie(searchQuery);
+                return searchMedia(searchQuery, url);
             }
-            return getMovies(filter, page)
+            return getMedia(filter, page, url)
         }
     })
 }

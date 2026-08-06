@@ -1,7 +1,7 @@
 import ContentLayout from "@/components/layouts/content_layout";
 import Header from "@/components/ui/Header";
 import Navbar from "@/components/ui/Navbar";
-import MovieDetailView from "@/features/Movies/components/MovieDetailView";
+import MediaDetailView from "@/features/Movies/components/MediaDetailView";
 
 export default function MovieDetails() {
 
@@ -10,7 +10,7 @@ export default function MovieDetails() {
             <Header />
             <Navbar />
             <ContentLayout>
-                <MovieDetailView />
+                <MediaDetailView />
             </ContentLayout>
         </>
     )

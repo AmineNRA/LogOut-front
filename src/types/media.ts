@@ -1,4 +1,4 @@
-export type movie = {
+export type media = {
     adult: boolean,
     backdrop_path: string,
     genre_ids: number[],
@@ -8,9 +8,11 @@ export type movie = {
     overview: string,
     popularity: number,
     poster_path: string,
+    first_air_date: string,
     release_date: string,
     softcore: boolean,
     title: string,
+    name: string,
     video: boolean,
     vote_average: number,
     vote_count: number
