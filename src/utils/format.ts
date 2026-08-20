@@ -1,3 +1,5 @@
+import { type media } from '@/types/media';
+
 export function createSlug(title: string, releaseDate: string, id: number) {
     const cleanTitle = title
         .toLowerCase()
@@ -39,4 +41,12 @@ export function formatNumberWithSpaces(num: number) {
         str[1] = str[1].replace(/(\d{3})/g, '$1 ');
     }
     return str.join('.');
+}
+
+export function changeLink(media: media) {
+    if (Object.hasOwnProperty.call(media, "title")) {
+        return `/films/${createSlug(media.title, media.release_date, media.id)}`
+    } else {
+        return `/series/${createSlug(media.name, media.first_air_date, media.id)}`
+    }
 }

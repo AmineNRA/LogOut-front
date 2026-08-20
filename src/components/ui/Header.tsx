@@ -6,7 +6,7 @@ export default function Header() {
             <Link to="/"> <img src="/logo.webp" alt="Logo" className="max-w-3xs" /></Link>
             <div className="flex gap-5">
                 <a href="#" className="text-app-text-h">Inscription</a>
-                <a href="#" className="text-app-text-h">Connexion</a>
+                <a href="/connexion" className="text-app-text-h">Connexion</a>
             </div>
         </header>
     )

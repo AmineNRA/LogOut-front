@@ -1,15 +1,20 @@
+import ContentLayout from "@/components/layouts/content_layout";
 import Header from "@/components/ui/Header";
 import Navbar from "@/components/ui/Navbar";
-import ContentLayout from "@/components/layouts/content_layout"
 import MediaList from "@/features/Movies/components/MediaList";
 
-export default function Show() {
+type MediaProps = {
+    mediaType: string
+}
+
+export default function Media({ mediaType }: MediaProps) {
+
     return (
         <>
             <Header />
             <Navbar />
             <ContentLayout>
-                <MediaList />
+                <MediaList mediaType={mediaType} />
             </ContentLayout>
         </>
     )

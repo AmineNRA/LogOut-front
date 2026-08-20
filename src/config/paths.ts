@@ -1,22 +1,22 @@
 export const paths = {
     home: {
-        path: '/',
-        getHref: () => '/',
+        path: "/",
+        getHref: () => "/",
     },
     films: {
         root: {
-            path: '/films',
+            path: "/films",
             getHref: () => '/films',
         },
         details: {
-            path: "/films/:filmName",
+            path: "/films/:slug",
             getHref: (name: string) => `/films/${name}`
         }
     },
     games: {
         root: {
-            path: '/games',
-            getHref: () => '/games',
+            path: "/games",
+            getHref: () => "/games",
         },
         details: {
             path: "/games/:gameId",
@@ -25,12 +25,22 @@ export const paths = {
     },
     series: {
         root: {
-            path: '/series',
+            path: "/series",
             getHref: () => "/series",
         },
         details: {
-            path: '/series/:serieId',
+            path: "/series/:slug",
             getHref: (id: string) => `/series/${id}`
+        }
+    },
+    auth: {
+        root: {
+            path: "/connexion",
+            getHref: () => "/connexion",
+        },
+        inscription: {
+            path: "/inscription",
+            getHref: () => "/inscription"
         }
     }
 }

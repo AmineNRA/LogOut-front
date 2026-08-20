@@ -6,14 +6,14 @@ import SearchBar from '@/components/ui/searchBar/searchBar';
 import useMedia from '../api/useMedia';
 import Loading from '@/components/ui/loading/Loading';
 import CustomPagination from '@/components/ui/pagination/CustomPagination';
-import { Link, useLocation } from "react-router-dom";
-import { createSlug } from '@/utils/format';
+import { Link } from "react-router-dom";
+import { changeLink } from '@/utils/format';
 
-export default function MediaList() {
+type MediaListProps = {
+    mediaType: string
+}
 
-    const location = useLocation();
-
-    const url = location.pathname;
+export default function MediaList({ mediaType }: MediaListProps) {
 
     const [filter, setFilter] = useState({
         year: null,
@@ -34,19 +34,9 @@ export default function MediaList() {
         setPage(value)
     }
 
-    const { data: medias, isLoading, error } = useMedia(page, filter, querySearch, url)
+    const { data: medias, isLoading, error } = useMedia(page, filter, querySearch, mediaType)
 
-
-
-    console.log(medias)
-
-    const changeLink = (media: media) => {
-        if (Object.hasOwnProperty.call(media, "title")) {
-            return `/films/${createSlug(media.title, media.release_date, media.id)}`
-        } else {
-            return `/series/${createSlug(media.name, media.first_air_date, media.id)}`
-        }
-    }
+    if (error) return <div className="text-center py-10 text-red-500">Une erreur est survenue</div>;
 
     return (
         <div className="max-w-7xl mx-auto px-4">
@@ -62,7 +52,7 @@ export default function MediaList() {
                         <div className="grid grid-flow-row grid-cols-5 gap-12 mt-4 justify-center">
                             {medias.results.map((media: media) => (
                                 media.poster_path &&
-                                <Link to={changeLink(media)} state={media.id} key={media.id}>
+                                <Link to={changeLink(media)} key={media.id}>
                                     <img src={`https://image.tmdb.org/t/p/w200${media.poster_path}`} alt={media.title} className="shadow-xl border-1 border-app-border rounded-lg hover:outline hover:outline-4 hover:outline-blue-500 hover:[outline-offset:-4px] cursor-pointer" />
                                 </Link>
 
@@ -74,11 +64,6 @@ export default function MediaList() {
                     </>
                 }
             </section>
-
-            {error ? (
-                <div> Une erreur est survenue </div>
-            ) :
-                ""}
         </div>
     )
 }

@@ -20,7 +20,7 @@ export default function Cast({ id }: CastProps) {
         queryFn: () => getCast(id, location.pathname)
     });
 
-    const castBegin = cast?.cast.slice(0, 8);
+    const castBegin = cast?.cast.slice(0, 10);
     const castEnd = cast?.cast;
 
     return (

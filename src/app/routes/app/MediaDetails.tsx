@@ -3,14 +3,18 @@ import Header from "@/components/ui/Header";
 import Navbar from "@/components/ui/Navbar";
 import MediaDetailView from "@/features/Movies/components/MediaDetailView";
 
-export default function MovieDetails() {
+type MediaDetailProps = {
+    mediaType: string
+}
+
+export default function MovieDetails({ mediaType }: MediaDetailProps) {
 
     return (
         <>
             <Header />
             <Navbar />
             <ContentLayout>
-                <MediaDetailView />
+                <MediaDetailView mediaType={mediaType} />
             </ContentLayout>
         </>
     )

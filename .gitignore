@@ -13,6 +13,7 @@ dist-ssr
 *.local
 .env
 erreur.txt
+ameliorations.txt
 
 # Editor directories and files
 .vscode/*

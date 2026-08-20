@@ -1,7 +1,7 @@
-export const searchMedia = async (search: string, url: string) => {
+export const searchMedia = async (search: string, mediaType: string) => {
     let fetchUrl: string;
 
-    if (url === '/films') {
+    if (mediaType === 'movie') {
         fetchUrl = `https://api.themoviedb.org/3/search/movie?query=${search}&include_adult=false&language=fr-FR&page=1`;
     }
     else {

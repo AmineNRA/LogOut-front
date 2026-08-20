@@ -10,7 +10,7 @@ type filter = {
 
 }
 
-export default function useMedia(page: number, filter: filter, searchQuery: string, url: string) {
+export default function useMedia(page: number, filter: filter, searchQuery: string, mediaType: string) {
 
     const isSearchActive = searchQuery.trim().length >= 3;
 
@@ -20,9 +20,9 @@ export default function useMedia(page: number, filter: filter, searchQuery: stri
             : ['medias', filter, page],
         queryFn: () => {
             if (isSearchActive) {
-                return searchMedia(searchQuery, url);
+                return searchMedia(searchQuery, mediaType);
             }
-            return getMedia(filter, page, url)
+            return getMedia(filter, page, mediaType)
         }
     })
 }
